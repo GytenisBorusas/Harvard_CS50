@@ -22,6 +22,7 @@ print(another_single_line_string)
 print(multi_line_string)
 print(another_multi_line_string)
 
+# Concatenation
 
 # Long Statements
 if(1 < 21) and (2 > 1) and \
