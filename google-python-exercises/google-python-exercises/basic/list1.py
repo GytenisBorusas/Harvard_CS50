@@ -21,7 +21,8 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-  return sorted(words)
+  new_sorted_words = sorted(words)
+    if new_sorted_words
   return
 
 
