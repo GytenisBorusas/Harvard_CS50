@@ -1,3 +1,6 @@
-print ("hello, world")
+# Ask user for their name
+name = input("What is your name? ") 
 
-# this is comment test
+# Print out "Hellow + user name from the previous line"
+print("hello, " + name)    
+
