@@ -6,7 +6,8 @@ def main():
     print(f"Leave ${tip:.2f}")
 
 
-def dollars_to_float(d):
+def dollars_to_flo
+at(d):
     dollars = float(d[1:])
     return dollars
 
