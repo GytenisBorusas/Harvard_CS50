@@ -1,29 +1,28 @@
 
 def main():
     print("Amount Due: 50")
-    total_amount = 50 - 0
+    total_amount = 50
     
    
 
     while total_amount > 0:
-        user_input = input("Insert Coin: ")
-        if total_amount > 0:
-            if user_input == 5 or user_input == 10 or user_input == 25:
-                total_amount = total_amount - int(user_input)
+        # Takes user input
+        user_input = int(input("Insert Coin: "))
+
+        # checks if input is valid
+        if user_input in [5, 10, 25]:
+            total_amount = total_amount - user_input
+            # check if its still sub 50 cents
+            if total_amount > 0:
                 print("Amount Due: " + str(total_amount))
         else:
-            if total_amount < 0:
-                print("Amount Owed: " + str(total_amount))
-  
+            print("Wrong amount")
 
 
-
-
-
-
-    # amount_owed = total_amount(user_input)
-
-
+    if total_amount < 0:
+        print("Amount Owed: " + str(total_amount))
+    else:
+        print("Transaction complete")
 
 
 main()
