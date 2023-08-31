@@ -16,11 +16,12 @@ def main():
             if total_amount > 0:
                 print("Amount Due: " + str(total_amount))
         else:
-            print("Wrong amount")
+            # print("Wrong amount")
+            print("Amount Due: " + str(total_amount))
 
 
-    if total_amount < 0:
-        print("Amount Owed: " + str(total_amount))
+    if total_amount <= 0:
+        print("Change Owed: " + str(total_amount * -1))
     else:
         print("Transaction complete")
 
