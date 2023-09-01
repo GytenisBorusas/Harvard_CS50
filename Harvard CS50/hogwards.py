@@ -1,7 +1,7 @@
-# students = ["Hermione", "Harry", "Ron", "Draco"]
+#   students = ["Hermione", "Harry", "Ron", "Draco"]
 
-# for student in students:
-#     print(student)
+#   for student in students:
+#       print(student)
 
 
 
