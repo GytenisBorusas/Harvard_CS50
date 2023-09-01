@@ -24,7 +24,9 @@ fruits ={
 def main():
     user_input_fruit = input("Input: ")
     lowercase_input = user_input_fruit.lower()
-    print("Calories: " + str(fruits[lowercase_input]))
+    
+    if lowercase_input in fruits:
+        print("Calories: " + str(fruits[lowercase_input]))
 
 
 main()
