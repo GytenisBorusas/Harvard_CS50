@@ -15,6 +15,9 @@ def main():
     user_input = input("Item: ")
     user_input_lower = user_input.lower()
     user_input_titlecased = user_input_lower.title()
-    print(user_input_titlecased)
+    # print(user_input_titlecased)
+
+    if user_input_titlecased in menu:
+         print("Total: " + str(menu.int()))
 
 main()
