@@ -53,7 +53,7 @@ def main():
 
     day, month, year = identify_format("Date: ")
 
-    print(f"{year}-{month}-{day}")
+    print(f"{year}-{month:02}-{day:02}")
 
 
     # print("Month:", month)
