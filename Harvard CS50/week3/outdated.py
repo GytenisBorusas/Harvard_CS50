@@ -1,29 +1,13 @@
-
 import re
 from datetime import datetime
 
 month_names = {
-        "january": ["january", "1"],
-        "february": ["february", "2"],
-        "march": ["march", "3"],
-        "april": ["april", "4"],
-        "may": ["may", "5"],
-        "june": ["june", "6"],
-        "july": ["july", "7"],
-        "august": ["august", "8"],
-        "september": ["september", "9"],
-        "october": ["october", "10"],
-        "november": ["november", "11"],
-        "december": ["december", "12"]
+    "january": ["january", "1"],
+    # ... [rest of the dictionary unchanged]
 }
 
-
 def get_month_number(month_name):
-    for key, values in month_names.items():
-        if month_name.lower() in values:
-            return values[1]
-    return None  # Return None if month not found
-
+    # [this function is unchanged]
 
 def identify_format(prompt):
     date_str = input(prompt)
@@ -31,6 +15,8 @@ def identify_format(prompt):
     # Check for the "9/8/1636" format
     if re.match(r"\d{1,2}/\d{1,2}/\d{4}", date_str):
         month, day, year = date_str.split('/')
+        if int(month) >= 13:  # Note: converted month to integer for comparison
+            return "Invalid month"
         return day, month, year
 
     # Check for the "September 8, 1636" format
@@ -48,16 +34,21 @@ def identify_format(prompt):
 
     return "Unknown format"
 
-
 def main():
-
-    day, month, year = identify_format("Date: ")
-
-    print(f"{year}-{month.zfill(2)}-{day.zfill(2)}")
-
-
-    # print("Month:", month)
-    # print("Day:", day)
-    # print("Year:", year)
+    while True:
+        result = identify_format("Date: ")
+        
+        if isinstance(result, str) and result == "Invalid month":
+            # print("Invalid month! Please try again.")
+            continue  # This will jump back to the start of the loop
+        
+        if result == "Unknown format":
+            # print("Unknown format! Please try again.")
+            continue  # This will jump back to the start of the loop
+        
+        # If we got here, it means we have a valid format.
+        day, month, year = result
+        print(f"{year}-{month.zfill(2)}-{day.zfill(2)}")
+        break  # Exit the loop as we have a valid date now
 
 main()
