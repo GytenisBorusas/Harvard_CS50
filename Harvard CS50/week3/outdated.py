@@ -49,15 +49,15 @@ def identify_format(prompt):
     return "Unknown format"
 
 
-
-
 def main():
 
     day, month, year = identify_format("Date: ")
 
+    print(f"{year}-{month}-{day}")
 
-    print("Month:", month)
-    print("Day:", day)
-    print("Year:", year)
+
+    # print("Month:", month)
+    # print("Day:", day)
+    # print("Year:", year)
 
 main()
