@@ -68,4 +68,7 @@ def test_square():
     assert square(0) == 0
     
 # new branch testing
+# test 1
 
+
+main()
