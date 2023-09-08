@@ -69,7 +69,3 @@ def test_square():
     
 # new branch testing
 # test 1
-
-print("testing of main")
-
-main()
