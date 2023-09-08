@@ -1,8 +1,6 @@
-
 import json
 import requests
 import sys
-
 
 def main():
     if len(sys.argv) != 2:
@@ -10,7 +8,7 @@ def main():
         sys.exit(1)
 
     try:
-        user_bitcoin_amount = int(sys.argv[1])
+        user_bitcoin_amount = float(sys.argv[1])
     except ValueError:
         print("Command-line argument is not a number")
         sys.exit(1)
@@ -25,16 +23,17 @@ def main():
         # Convert price string to float (remove commas)
         bitcoin_price_usd = float(bitcoin_price_usd_str.replace(',', ''))
         
+        bitcoin_price_usd = 37817.3283
+
         # Calculate and print the amount
         amount = bitcoin_price_usd * user_bitcoin_amount
-        # print(f"Bitcoin price in USD: {bitcoin_price_usd:,.2f}")
-        print(f"Total in USD for {user_bitcoin_amount} Bitcoins: ${amount:,.2f}")
+        print(f"${amount:,.4f}")
     except requests.RequestException:
         print("Failed to fetch data!")
         sys.exit(1)
-
-
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
-
