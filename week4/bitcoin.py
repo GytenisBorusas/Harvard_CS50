@@ -2,6 +2,7 @@ import json
 import requests
 import sys
 
+
 def main():
     if len(sys.argv) != 2:
         print("Missing or too many command-line arguments")
@@ -19,11 +20,9 @@ def main():
 
         data = response.json()
         bitcoin_price_usd_str = data["bpi"]["USD"]["rate"]
-        
+
         # Convert price string to float (remove commas)
-        bitcoin_price_usd = float(bitcoin_price_usd_str.replace(',', ''))
-        
-        bitcoin_price_usd = 37817.3283
+        bitcoin_price_usd = float(bitcoin_price_usd_str.replace(",", ""))
 
         # Calculate and print the amount
         amount = bitcoin_price_usd * user_bitcoin_amount
@@ -34,6 +33,7 @@ def main():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
