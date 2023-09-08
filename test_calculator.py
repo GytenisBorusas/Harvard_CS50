@@ -68,3 +68,4 @@ def test_square():
     assert square(0) == 0
     
 
+print("testing of main")
