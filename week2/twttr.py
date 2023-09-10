@@ -1,10 +1,18 @@
 
 def main():
-    user_input = input("Input: ")
+    twttr_word = shorten("Input: ")
+    print(twttr_word, end="")
+
+
+
+def shorten(word):
     vowels = "AEIOUaeiou"
-    for letter in user_input:
+    twttr_list = []
+    for letter in word:
             if letter not in vowels:
-                print(letter, end="")
+                 twttr_list.append(letter)
+    return twttr_list
 
 
-main()
+if __name__ == "__main__":
+    main()
