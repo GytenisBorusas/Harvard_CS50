@@ -26,21 +26,38 @@
 
 # same as above but shortened syntax
 
+# students = []
+
+# with open("students.csv") as file:
+#     for line in file:
+#         name, home = line.rstrip().split(",")
+#         student = {"name": name, "home": house}
+#         students.append(student)
+
+# # def get_name(student):
+# #     return student["name"]
+
+# # def get_house(student):
+# #     return student["house"]
+
+# for student in sorted(students, key=lambda student: student["name"]):
+#     print(f"{student['name']} is from {student['home']}")
+
+# ---------------------------------------------------------------
+
+# csv reader. Should have worked with more than 3 inputs, but it didnt. 
+
+import csv
+
 students = []
 
 with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        student = {"name": name, "house": house}
-        students.append(student)
+    reader = csv.reader(file)
+    for name, home in reader:
+        students.append({"name": name, "home": home})
+
+for student in sorted(students, key=lambda student: student["name"]):
+    print(f"{student['name']} is from {student['home']}")
 
 
-def get_name(student):
-    return student["name"]
-
-def get_house(student):
-    return student["house"]
-
-for student in sorted(students, key=get_house, reverse=True):
-    print(f"{student['name']} is in {student['house']}")
 
