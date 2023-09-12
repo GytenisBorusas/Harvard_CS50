@@ -46,18 +46,35 @@
 # ---------------------------------------------------------------
 
 # csv reader. Should have worked with more than 3 inputs, but it didnt. 
+# it wasnt working correctly because Harry's home address wasnt in ""
+
+# import csv
+
+# students = []
+
+# with open("students.csv") as file:
+#     reader = csv.reader(file)
+#     for name, home in reader:
+#         students.append({"name": name, "home": home})
+
+# for student in sorted(students, key=lambda student: student["name"]):
+#     print(f"{student['name']} is from {student['home']}")
+
+
+
+# ---------------------------------------------------------------
+
+# csv DictReader
 
 import csv
 
 students = []
 
 with open("students.csv") as file:
-    reader = csv.reader(file)
-    for name, home in reader:
-        students.append({"name": name, "home": home})
+    reader = csv.DictReader(file)
+    for row in reader:
+        students.append({"name": row["name"], "home": row["home"]})
 
 for student in sorted(students, key=lambda student: student["name"]):
     print(f"{student['name']} is from {student['home']}")
-
-
 
