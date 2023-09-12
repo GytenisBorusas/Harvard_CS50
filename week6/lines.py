@@ -25,7 +25,8 @@ def main():
 def imported_file(filename):
     with open(filename, "r") as file:
         lines = file.readlines()
-        non_comment_lines  = [line for line in lines if not line.lstrip().startswith("#")]
+        non_comment_lines  = [line for line in lines if 
+                              line.strip() and not line.lstrip().startswith("#")]
         num_lines = len(non_comment_lines)
     return num_lines
 
