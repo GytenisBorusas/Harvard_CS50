@@ -6,10 +6,10 @@ import csv
 
 def main():
     if len(sys.argv) < 3:
-        print("Too few comman-line arguments")
+        print("Too few command-line arguments")
         sys.exit(1)
     elif len(sys.argv) > 3:
-        print("Too many comman-line arguments")
+        print("Too many command-line arguments")
         sys.exit(1)
 
     input_csv = sys.argv[1]
@@ -39,7 +39,7 @@ def read_data(before_csv):
 
         for line in reader:
             name = line[0]
-            house = line [1]
+            house = line [1].strip()
             last, first = name.split(",")
             student = {"first": first, "last": last, "house": house}
             students.append(student)
