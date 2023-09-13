@@ -18,25 +18,24 @@ def main():
         sys.exit(1)
 
     try:
-        pizza_type, small_price, large_price = formated_table(sys.argv[1])
-        print(f"{pizza_type}, {small_price}, {large_price}")
+        table_data = formated_table(sys.argv[1])
+        print_table(table_data)
     except FileNotFoundError:
-        print("file does not exist")
+        print("File does not exist")
         sys.exit(1)
 
 def formated_table(filename):
     with open(filename, 'r') as file:
         menu = csv.DictReader(file)
+
         headers = next(menu)
+        rows = [row for row in menu]
 
-        first_column_name = menu.fieldnames[0]
-
-        for row in menu:
-            pizza_type = row[first_column_name]
-            small_price = row['Small']
-            large_price = row['Large']
-            return pizza_type, small_price, large_price
-
+        return headers, rows
+    
+def print_table(data):
+        headers, rows = data
+        print(tabulate(rows, headers=headers, tablefmt="grid"))
 
 if __name__ == "__main__":
     main()
