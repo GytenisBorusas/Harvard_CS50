@@ -6,7 +6,7 @@ import sys
 
 def main():
     # print(validate(input("IPv4 Address: ")))
-    is_ip_valid, error_message_back = validate()
+    is_ip_valid = validate()
     print(f"{is_ip_valid}")
 
 
@@ -27,7 +27,7 @@ def validate():
             oct3 = int(str_oct3)
             oct4 = int(str_oct4)
         
-            if (0 <= oct1 <= 255) and (0 <= oct4 <= 255) and (0 <= oct3 <= 255) and (0 <= oct4 <= 255 <= 255):
+            if (0 <= oct1 <= 255) and (0 <= oct4 <= 255) and (0 <= oct3 <= 255) and (0 <= oct4 <= 255):
                 validation_statement = str("True")
             else:
                 validation_statement = str("False")
@@ -37,7 +37,7 @@ def validate():
     except ValueError:
         error_message = (f"False2 - ValueError")
 
-    return validation_statement, error_message
+    return validation_statement
 
 
 if __name__ == "__main__":
