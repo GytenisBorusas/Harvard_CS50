@@ -6,7 +6,7 @@ import sys
 
 def main():
     # print(validate(input("IPv4 Address: ")))
-    is_ip_valid = validate()
+    is_ip_valid, error_message_back = validate()
     print(f"{is_ip_valid}")
 
 
@@ -33,11 +33,11 @@ def validate():
                 validation_statement = str("False")
 
         except ValueError:
-            print(f"False1 - ValueError")
+            error_message = (f"False1 - ValueError")
     except ValueError:
-            print(f"False2 - ValueError")
+        error_message = (f"False2 - ValueError")
 
-    return validation_statement
+    return validation_statement, error_message
 
 
 if __name__ == "__main__":
