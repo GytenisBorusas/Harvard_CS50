@@ -28,7 +28,31 @@ def convert(s):
     else:
         to_hours = int(second_hour)
 
+    if from_hours == 24:
+        from_hours = 0
+    elif from_hours > 24:
+        raise ValueError
+        sys.exit(1)
+    
+    if to_hours == 24:
+        to_hours = 0
+    elif to_hours > 24:
+        raise ValueError
+        sys.exit(1)
 
+    if int(first_minute) == 60:
+        first_minute = 0
+    elif int(first_minute) > 60:
+        raise ValueError
+        sys.exit(1)
+    
+    if int(second_minute) == 60:
+        second_minute = 0
+    elif int(second_minute) > 60:
+        raise ValueError
+        sys.exit(1)
+
+     
 
     time_from = str(f"{from_hours}:{first_minute}")
     time_to = str(f"{to_hours}:{second_minute}")
