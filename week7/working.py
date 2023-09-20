@@ -41,22 +41,19 @@ def convert(s):
         sys.exit(1)
         
 
-    if int(first_minute) == 60:
-        first_minute = 0
-    elif int(first_minute) > 60:
+    if int(first_minute) >= 60:
         raise ValueError
         sys.exit(1)
+
     
-    if int(second_minute) == 60:
-        second_minute = 0
-    elif int(second_minute) > 60:
+    if int(second_minute) >= 60:
         raise ValueError
         sys.exit(1)
 
      
 
-    time_from = str(f"{from_hours}:{first_minute}")
-    time_to = str(f"{to_hours}:{second_minute}")
+    time_from = str(f"{from_hours:02}:{first_minute}")
+    time_to = str(f"{to_hours:02}:{second_minute}")
 
     return time_from, time_to
 
