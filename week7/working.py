@@ -39,6 +39,7 @@ def convert(s):
     elif to_hours > 24:
         raise ValueError
         sys.exit(1)
+        
 
     if int(first_minute) == 60:
         first_minute = 0
