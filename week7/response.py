@@ -12,16 +12,12 @@ def main():
     else:
         print(f"Invalid")
     
+
 def validation_of_email(s):
-    return_value = False
-
-    if validators.email(s) == True:
-        return_value = True
+    if validators.email(s):
+        return True
     else:
-        return_value = False
-    
-    return return_value
-
+        return False
 
 
 if __name__ == "__main__":
