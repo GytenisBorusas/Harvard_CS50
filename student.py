@@ -86,20 +86,57 @@
 
 
 
+# # learning class'es
+# class Student:
+#     def __init__(self, name, house):
+#         self.name = name 
+#         self.name = house
+
+# def main():
+#     student = get_student()
+#     print(f"{student.name} from {student.house}")
+
+# def get_student():
+#     # student = Student()
+#     # student.name = input("Name: ")
+#     # student.house = input("House: ")
+#     # return student
+
+#     # same as above - storing two variables inside of the Student class variable 'student'
+#     name = input("Name: ")
+#     house = input("House: ")
+#     student = Student(name, house)
+#     return student
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+
+# ---------------------------------------
+
+
+
 # learning class'es
 class Student:
-    ...
-
+    def __init__(self, name, house):
+        if not name:
+            raise ValueError("Missing name")
+        if house not in ["Griff", "Huff", "Raven", "Slyth"]:
+            raise ValueError("Invalid house")
+        self.name = name 
+        self.name = house
 
 def main():
     student = get_student()
     print(f"{student.name} from {student.house}")
 
 def get_student():
-    student = Student()
-    student.name = input("Name: ")
-    student.house = input("House: ")
-    return student
+    name = input("Name: ")
+    house = input("House: ")
+    return Student(name, house)
+
 
 if __name__ == "__main__":
     main()
