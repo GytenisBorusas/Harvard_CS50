@@ -172,6 +172,34 @@
 
 
 
+# # learning class'es
+# class Student:
+#     def __init__(self, name, house):
+#         self.name = name 
+#         self.house = house
+
+#     def __str__(self):
+#         return f"{self.name} from {self.house}"
+    
+#     @classmethod
+#     def get(cls):
+#         name = input("Name: ")
+#         house = input("House: ")
+#         return cls(name, house)
+
+    
+# def main():
+#     student = Student.get()
+#     print(student)
+
+
+# if __name__ == "__main__":
+#     main()
+
+# ---------------------------------------
+
+
+
 # learning class'es
 class Student:
     def __init__(self, name, house):
@@ -182,15 +210,14 @@ class Student:
         return f"{self.name} from {self.house}"
     
     @classmethod
-    def get(cls);
+    def get(cls):
         name = input("Name: ")
         house = input("House: ")
         return cls(name, house)
 
     
 def main():
-    student = get_student()
-    student._house = "Number Four"
+    student = Student.get()
     print(student)
 
 
