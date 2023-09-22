@@ -1,4 +1,4 @@
 
-print(type("hello, world"))
+print(type([]))
 
 
