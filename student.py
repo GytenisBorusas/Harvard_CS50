@@ -38,22 +38,72 @@
 # ---------------------------------------
 
 
+# def main():
+#     student = get_student()
+#     print(f"{student['name']} from {student['house']}")
+
+# def get_student():
+#     student = {}
+#     student["name"] = input("Name: ")
+#     student["house"] = input("House: ")
+#     return student
+
+#     # same as above
+#     # name = input("Name: ")
+#     # house = input("House: ")
+#     # return {"name": name, "house": house}
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+# ---------------------------------------
+
+
+# def main():
+#     student = get_student()
+#     if student["name"] == "Padma":
+#         student["house"] = "Ravenclaw"
+#     print(f"{student['name']} from {student['house']}")
+
+# def get_student():
+#     student = {}
+#     student["name"] = input("Name: ")
+#     student["house"] = input("House: ")
+#     return student
+
+#     # same as above
+#     # name = input("Name: ")
+#     # house = input("House: ")
+#     # return {"name": name, "house": house}
+
+# if __name__ == "__main__":
+#     main()
+
+
+# ---------------------------------------
+
+
+
+# learning class'es
+class Student:
+    ...
+
+
 def main():
     student = get_student()
-    print(f"{student['name']} from {student['house']}")
+    print(f"{student.name} from {student.house}")
 
 def get_student():
-    student = {}
-    student["name"] = input("Name: ")
-    student["house"] = input("House: ")
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
     return student
-
-    # same as above
-    # name = input("Name: ")
-    # house = input("House: ")
-    # return {"name": name, "house": house}
 
 if __name__ == "__main__":
     main()
+
+
 
 
