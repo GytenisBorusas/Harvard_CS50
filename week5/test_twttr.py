@@ -25,4 +25,3 @@ def test_6():
 
 def test_7():
     assert shorten("twit..ter") == "twt..tr"
-
