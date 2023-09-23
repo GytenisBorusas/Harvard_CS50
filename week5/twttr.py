@@ -6,15 +6,14 @@ def main():
 
 
 
-def shorten(prompt):
-    user_input = input(prompt)
+def shorten(text):
     vowels = "AEIOUaeiou"
     twttr_list = []
     for letter in user_input:
             if letter not in vowels:
                  twttr_list.append(letter)
                  # print(f"{twttr_list} print from shorten")
-            joint_word = ''.join(twttr_list)
+    joint_word = ''.join(twttr_list)
     return joint_word
 
 
