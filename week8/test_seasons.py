@@ -6,10 +6,10 @@ from seasons import format_time
 
 
 def test_1():
-    assert calculation(2023, 9, 21) == ("one thousand, four hundred forty")
+    assert calculation(2023, 9, 21) == ("One thousand, four hundred forty")
 
 def test_2():
-    assert calculation(2023, 9, 1) == ("thirty thousand, two hundred forty")
+    assert calculation(2023, 9, 1) == ("Thirty thousand, two hundred forty")
 
 # def test_3():
 #     assert format_time("cat") is False

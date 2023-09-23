@@ -11,7 +11,7 @@ def main():
     year, month, day = get_date()
     minutes = calculation(year, month, day)
     print_ready = format_time(minutes)
-    print(f"{print_ready}")
+    print(f"{print_ready} minutes")
 
 
 
@@ -46,7 +46,7 @@ def calculation(birth_year, birth_month, birth_day):
     minutes_since = days_since * 24 * 60
 
     # print(f"{days_since} days since my birth")
-    print(f"{minutes_since} minutes since my birth")
+    # print(f"{minutes_since} minutes since my birth")
     return minutes_since
 
 
@@ -54,6 +54,7 @@ def format_time(time_in_minutes):
     p = inflect.engine()
     words = p.number_to_words(time_in_minutes)
     words = words.replace(" and", "")
+    words = words.capitalize()
     # words = words.replace(", ", " ")
     # print(f"{words}")
 
