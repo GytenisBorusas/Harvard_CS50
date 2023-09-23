@@ -2,14 +2,15 @@
 
 
 
-from datetime import date
+import datetime
 import sys
+import inflect
 
 
 def main():
     year, month, day = get_date()
-    calculated_time = calculation(year, month, day)
-    print_ready = format_time(calculated_time)
+    minutes = calculation(year, month, day)
+    print_ready = format_time(minutes)
     print(f"{print_ready}")
 
 
@@ -30,14 +31,33 @@ def get_date():
         sys.exit(1)      
     return birth_int_year, birth_int_month, birth_int_day
 
-def calculation():
-    today_year, today_month, today_day = datetime.date.today()
+def calculation(birth_year, birth_month, birth_day):
+    today = datetime.date.today()
+
+    try:
+        birthday = datetime.date(birth_year, birth_month, birth_day)
+    except ValueError:
+        print("Invalid date")
+        sys.exit(1)
 
 
+    delta = today - birthday
+    days_since = delta.days
+    minutes_since = days_since * 24 * 60
 
-def format_time():
-    ...
-    return 
+    # print(f"{days_since} days since my birth")
+    print(f"{minutes_since} minutes since my birth")
+    return minutes_since
+
+
+def format_time(time_in_minutes):
+    p = inflect.engine()
+    words = p.number_to_words(time_in_minutes)
+    words = words.replace(" and", "")
+    # words = words.replace(", ", " ")
+    # print(f"{words}")
+
+    return words
 
 
 
