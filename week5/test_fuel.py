@@ -9,7 +9,7 @@ def test_1():
     assert convert("1/1") == "100"
 
 def test_2():
-    assert convert("1/10?") == "10?"
+    assert convert("1/10") == "10"
 
 # def test_3():
 #     assert convert("TWITTER") == "TWTTR"

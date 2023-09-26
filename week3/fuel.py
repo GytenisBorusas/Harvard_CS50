@@ -48,7 +48,7 @@
 # ----------------------------------------
 # week 5 submition
 
-
+import sys
 
 def main():
     user_input_in_fraction  = input("Fraction? ")
@@ -60,10 +60,10 @@ def convert(fraction):
     while True:
         try:
             # get input from the user
-            fuel_fraction = input(prompt)
+            # fuel_fraction = input(prompt)
             
-            # divides input 'fuel_fraction' into 2 different variables - 'x' and 'y'
-            x, y = fuel_fraction.split('/')
+            # divides input 'fraction' into 2 different variables - 'x' and 'y'
+            x, y = fraction.split('/')
 
             # Converts 'x' and 'y' to integers
             x = int(x)
@@ -78,14 +78,19 @@ def convert(fraction):
                 continue
 
         except ValueError:
-            print("This isnt a fraction")
+            print("This isn't a fraction")
+            continue
         except ZeroDivisionError:
-            print("Cant divide by 0")
-        else:
-            return 
+            print("Can't divide by 0")
+            continue
+    
+        return str(fuel_amount)
 
 
 def gauge(percentage):
+
+    percentage = int(percentage)
+
     if percentage <= 1:
         return "E"
     elif percentage >= 99:
