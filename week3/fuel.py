@@ -40,5 +40,6 @@ def fraction_input(prompt):
         else:
             return fuel_amount
         
-
-main()
+        
+if __name__ == "__main__":
+    main()
