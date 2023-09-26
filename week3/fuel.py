@@ -51,20 +51,12 @@
 
 
 def main():
-    fuel_amount  = fraction_input("Fraction? ")
+    user_input_in_fraction  = input("Fraction? ")
+    converted_fuel_amount = convert(user_input_in_fraction)
+    fuel_indicator = gauge(converted_fuel_amount)
+    print(fuel_indicator)
 
-    
-    
-    if fuel_amount <= 1:
-        print("E")
-    elif fuel_amount >= 99:
-        print("F")
-    else:
-        print(f"{fuel_amount}%")
-
-
-def fraction_input(prompt):
-
+def convert(fraction):
     while True:
         try:
             # get input from the user
@@ -90,8 +82,18 @@ def fraction_input(prompt):
         except ZeroDivisionError:
             print("Cant divide by 0")
         else:
-            return fuel_amount
-        
-        
+            return 
+
+
+def gauge(percentage):
+    if percentage <= 1:
+        return "E"
+    elif percentage >= 99:
+        return "F"
+    else:
+        return f"{percentage}%"
+
+
+
 if __name__ == "__main__":
     main()
