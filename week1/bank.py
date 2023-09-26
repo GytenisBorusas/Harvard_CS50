@@ -48,20 +48,14 @@ def main():
     print(value(user_input))
 
 def value(greeting):
-
-    greeting =
-    greeting = greeting.lower()
-    greeting = greeting.replace(" ", "")
+    greeting = greeting.lower().replace(" ", "")
 
     if greeting.startswith("hello"):
-        return_to_screen = str("$0")
-        return return_to_screen
+        return "$0"
     elif greeting.startswith("h"):
-        return_to_screen = str("$20")
-        return return_to_screen
+        return "$20"
     else:
-        return_to_screen = str("$100")
-        return return_to_screen
+        return "$100"
 
 
 if __name__ == "__main__":
