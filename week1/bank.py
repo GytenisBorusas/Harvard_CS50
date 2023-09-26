@@ -4,7 +4,7 @@
 #     user_input = user_input.lower()
 #     user_input = user_input.replace(" ", "")
 #     symbols = list(user_input)
-# 
+#
 #    hello_list = ['h', 'e', 'l', 'l', 'o']
     # h_list = ['h']
 
@@ -14,21 +14,21 @@
     #     print("$20")
     # else:
     #     print("$100")
-    #     
+    #
     #     # test variables
     #     print(symbols[0:5])
 
 
 # ---------------------------------------
 
-Week 1 submitted homework
+# Week 1 submitted homework
 
 # def main():
-#     user_input = input("Greeting: ")   
+#     user_input = input("Greeting: ")
 #     user_input = user_input.lower()
 #     user_input = user_input.replace(" ", "")
 
-    
+
 #     if user_input.startswith("hello"):
 #         print("$0")
 #     elif user_input.startswith("h"):
@@ -44,12 +44,12 @@ Week 1 submitted homework
 
 
 def main():
-    user_input = value() 
-
+    user_input = input("Greeting: ")
+    print(value(user_input))
 
 def value(greeting):
 
-    greeting = input("Greeting: ")   
+    greeting =
     greeting = greeting.lower()
     greeting = greeting.replace(" ", "")
 
