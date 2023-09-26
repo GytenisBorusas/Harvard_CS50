@@ -18,24 +18,51 @@
     #     # test variables
     #     print(symbols[0:5])
 
-def main():
-    user_input = input("Greeting: ")   
-    user_input = user_input.lower()
-    user_input = user_input.replace(" ", "")
+
+# ---------------------------------------
+
+Week 1 submitted homework
+
+# def main():
+#     user_input = input("Greeting: ")   
+#     user_input = user_input.lower()
+#     user_input = user_input.replace(" ", "")
 
     
-    if user_input.startswith("hello"):
-        print("$0")
-    elif user_input.startswith("h"):
-        print("$20")
+#     if user_input.startswith("hello"):
+#         print("$0")
+#     elif user_input.startswith("h"):
+#         print("$20")
+#     else:
+#         print("$100")
+
+# if __name__ == "__main__":
+#     main()
+
+# ---------------------------------------
+# week 5 homework for unit test
+
+
+def main():
+    user_input = value() 
+
+
+def value(greeting):
+
+    greeting = input("Greeting: ")   
+    greeting = greeting.lower()
+    greeting = greeting.replace(" ", "")
+
+    if greeting.startswith("hello"):
+        return_to_screen = str("$0")
+        return return_to_screen
+    elif greeting.startswith("h"):
+        return_to_screen = str("$20")
+        return return_to_screen
     else:
-        print("$100")
+        return_to_screen = str("$100")
+        return return_to_screen
 
 
-
-
-
-
-
-
-main()
+if __name__ == "__main__":
+    main()
