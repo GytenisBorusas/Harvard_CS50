@@ -3,17 +3,22 @@ from plates import is_valid
 
 
 def test_is_valid1():
-    assert shorten("CS50") == True
+    assert is_valid("CS50") == True
 
 def test_is_valid2():
-    assert shorten("CS05") == False
+    assert is_valid("CS05") == False
 
 def test_is_valid3():
-    assert shorten("PI3.14") == False
+    assert is_valid("PI3.14") == False
 
 def test_is_valid4():
-    assert shorten("H") == False
+    assert is_valid("H") == False
 
 def test_is_valid5():
-    assert shorten("OUTATIME") == False
+    assert is_valid("OUTATIME") == False
 
+def test_is_valid6():
+    assert is_valid("6666") == False
+
+def test_is_valid7():
+    assert is_valid("AAA22A") == False
