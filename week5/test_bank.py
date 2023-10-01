@@ -1,6 +1,6 @@
 
 
-from bank import value
+from .bank import value
 
 
 def test_value1():
