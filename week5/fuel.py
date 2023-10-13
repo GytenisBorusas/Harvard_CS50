@@ -187,7 +187,7 @@ def convert(fraction):
             print("Can't divide by 0")
             continue
 
-        return str(fuel_amount)
+        return fuel_amount
 
 
 def gauge(percentage):
