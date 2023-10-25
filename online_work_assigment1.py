@@ -27,30 +27,28 @@ def check_if_sunday(date_series):
     return date_series.dt.dayofweek == 6
 
 def calculate_periods(is_sunday_series):
-    """Calculate monitoring periods based on Sundays."""
     return is_sunday_series.cumsum()
 
 def format_periods(period_series):
-    """Format the period numbers with a 'p' prefix."""
     return 'p' + period_series.astype(str)
 
 def main():
-    # Step 1: Generate a list of dates
+    # Defining start and end dates
     start_date = '1/1/2017'
     end_date = '30/6/2017'
     list_of_dates = create_date_list(start_date, end_date)
     
-    # Step 2: Initialize the DataFrame
+    # Starts the data frames
     df = initialize_dataframe(list_of_dates)
     
-    # Step 3: Identify Sundays
+    # Find the Sundays
     is_sunday = check_if_sunday(df['date'])
     
-    # Step 4: Calculate and format monitoring periods
+    # Calculates and reformats the tables
     periods = calculate_periods(is_sunday)
     df['monitoring_period'] = format_periods(periods)
     
-    # Step 5: Display the DataFrame
+    # prints out the tables
     print(df)
 
 if __name__ == "__main__":

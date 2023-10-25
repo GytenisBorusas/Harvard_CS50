@@ -71,7 +71,7 @@ def simulate_move(start_x, start_y, end_x, end_y):
         if is_off_platform(x, y):
             return False  # We fell off the platform
 
-# Main part of the program
+# Main part of the program. This is where we simulate if probabilities. 
 num_trials = 10000
 success_count = 0
 
